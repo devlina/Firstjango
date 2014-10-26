@@ -14,7 +14,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
+DATABASE_PATH = os.path.join(PROJECT_PATH, 'rangoapp.db')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -128,7 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'rangoapp',
