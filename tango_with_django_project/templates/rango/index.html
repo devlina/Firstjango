@@ -10,7 +10,29 @@
     <body>
         <h1>Rango says...</h1>
         hello world! <strong>{{ boldmessage }}</strong><br />
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <!--<li><a href="/rango/category/{{ category.url }}">{{ category.name }}</a></li>-->
+                <!-- url is not hardcoded, instead '% url %' is used-->
+                <li><a href="{% url 'rangoapp:category' category.url %}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+        {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no pages found.</strong>
+        {% endif %}
+
         <a href="/rango/about/">About</a><br />
+        <a href="/rango/add_category/">Add a New Category</a>
         <img src="{% static "images.jpeg" %}" alt="Picture of Rango" /> <!-- New line -->
     </body>
 
